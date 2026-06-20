@@ -20,8 +20,12 @@
     --n200: #EBEBED;
     --n100: #F7F7F9;
     --white: #FFFFFF;
-    --r-sm: 8px; --r-md: 14px; --r-lg: 22px; --r-pill: 100px;
+    --r-sm: 8px;
+    --r-md: 14px;
+    --r-lg: 22px;
+    --r-pill: 100px;
   }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
@@ -33,17 +37,21 @@
   }
   a { text-decoration: none; color: inherit; }
   img { max-width: 100%; display: block; }
+
   .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
 
-  /* NAV */
-  nav { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+  /* ── NAV mínima ── */
+  nav {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
   .nav-inner { display: flex; align-items: center; justify-content: space-between; }
   .logo { font-size: 18px; font-weight: 700; letter-spacing: -.02em; }
   .logo span { color: var(--t400); }
   .back-link { font-size: 13px; color: rgba(255,255,255,.45); transition: color .15s; }
   .back-link:hover { color: var(--t400); }
 
-  /* HERO SPLIT */
+  /* ── HERO SPLIT ── */
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -52,7 +60,8 @@
     padding: 72px 0 80px;
   }
 
-  /* copy izquierda */
+  /* columna izquierda — copy */
+  .hero-copy {}
   .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -68,10 +77,13 @@
     text-transform: uppercase;
     margin-bottom: 24px;
   }
-  .dot-live { width: 6px; height: 6px; border-radius: 50%; background: var(--t400); animation: blink 2s ease-in-out infinite; }
+  .dot-live {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--t400);
+    animation: blink 2s ease-in-out infinite;
+  }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
 
-  /* CAMBIO 3: Titular conectado con la landing */
   h1 {
     font-size: clamp(30px, 4vw, 48px);
     font-weight: 800;
@@ -90,6 +102,7 @@
   }
   .hero-sub strong { color: var(--white); }
 
+  /* lo que descubres */
   .what-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
   .what-list li {
     display: flex;
@@ -104,15 +117,24 @@
     background: rgba(93,202,165,.15);
     border: 1px solid var(--t400);
     display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; margin-top: 2px;
-    font-size: 11px; color: var(--t400);
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-size: 11px;
+    color: var(--t400);
   }
 
-  .class-meta { display: flex; gap: 20px; flex-wrap: wrap; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1); }
+  /* datos de la clase */
+  .class-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,.1);
+  }
   .meta-item { font-size: 13px; color: rgba(255,255,255,.45); display: flex; align-items: center; gap: 6px; }
   .meta-item strong { color: var(--white); font-weight: 600; }
 
-  /* CAMBIO 1: chip de Diana con credenciales correctas */
+  /* Diana chip */
   .diana-chip {
     display: inline-flex;
     align-items: center;
@@ -125,16 +147,15 @@
   }
   .diana-avatar {
     width: 36px; height: 36px; border-radius: 50%;
-    overflow: hidden;
     background: linear-gradient(135deg, var(--t600), var(--v400));
     display: flex; align-items: center; justify-content: center;
-    font-size: 16px; flex-shrink: 0;
+    font-size: 16px;
+    flex-shrink: 0;
   }
-  .diana-avatar img { width: 100%; height: 100%; object-fit: cover; }
   .diana-chip-name { font-size: 13px; font-weight: 600; color: var(--white); }
   .diana-chip-role { font-size: 11px; color: rgba(255,255,255,.45); }
 
-  /* FORMULARIO */
+  /* ── FORMULARIO ── */
   .form-col {}
   .form-card {
     background: var(--white);
@@ -144,77 +165,170 @@
     position: sticky;
     top: 24px;
   }
-  .form-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--t600); margin-bottom: 8px; }
-  .form-title { font-size: 22px; font-weight: 700; color: var(--v800); line-height: 1.3; margin-bottom: 6px; }
-  .form-sub { font-size: 14px; color: var(--n400); margin-bottom: 28px; line-height: 1.6; }
+  .form-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--t600);
+    margin-bottom: 8px;
+  }
+  .form-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--v800);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .form-sub {
+    font-size: 14px;
+    color: var(--n400);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
 
   .field { margin-bottom: 18px; }
-  .field label { display: block; font-size: 13px; font-weight: 600; color: var(--n600); margin-bottom: 6px; }
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--n600);
+    margin-bottom: 6px;
+  }
   .field input, .field select {
-    width: 100%; padding: 12px 16px;
+    width: 100%;
+    padding: 12px 16px;
     border: 1.5px solid var(--n200);
     border-radius: var(--r-md);
-    font-size: 15px; color: var(--n900); background: var(--white);
-    transition: border-color .15s; font-family: inherit; outline: none;
+    font-size: 15px;
+    color: var(--n900);
+    background: var(--white);
+    transition: border-color .15s;
+    font-family: inherit;
+    outline: none;
   }
-  .field input:focus, .field select:focus { border-color: var(--v400); box-shadow: 0 0 0 3px rgba(127,119,221,.12); }
+  .field input:focus, .field select:focus {
+    border-color: var(--v400);
+    box-shadow: 0 0 0 3px rgba(127,119,221,.12);
+  }
   .field input::placeholder { color: var(--n400); }
 
   .submit-btn {
-    width: 100%; padding: 16px; background: var(--v600); color: var(--white);
-    border: none; border-radius: var(--r-pill); font-size: 16px; font-weight: 700;
-    cursor: pointer; transition: background .15s, transform .1s; font-family: inherit; margin-top: 4px;
+    width: 100%;
+    padding: 16px;
+    background: var(--v600);
+    color: var(--white);
+    border: none;
+    border-radius: var(--r-pill);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .15s, transform .1s;
+    font-family: inherit;
+    margin-top: 4px;
   }
   .submit-btn:hover { background: var(--v800); transform: translateY(-1px); }
-
-  /* CAMBIO 5: enlace a ruta para indecisos */
-  .form-ruta-link {
-    text-align: center;
-    margin-top: 16px;
-    font-size: 13px;
-    color: var(--n400);
-    line-height: 1.6;
-  }
-  .form-ruta-link a {
-    color: var(--t600);
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
+  .submit-btn:active { transform: translateY(0); }
 
   .form-guarantee {
-    display: flex; align-items: center; gap: 8px;
-    margin-top: 14px; font-size: 12px; color: var(--n400);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--n400);
   }
   .form-guarantee svg { flex-shrink: 0; }
 
-  /* ÉXITO */
-  .success-state { display: none; text-align: center; padding: 8px 0; }
-  .success-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--t100); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; }
-  .success-title { font-size: 22px; font-weight: 700; color: var(--v800); margin-bottom: 8px; }
-  .success-sub { font-size: 15px; color: var(--n400); line-height: 1.6; margin-bottom: 24px; }
-  .wa-btn { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: var(--white); font-size: 15px; font-weight: 700; padding: 14px 28px; border-radius: var(--r-pill); transition: opacity .15s; }
+  /* ── ESTADO ÉXITO ── */
+  .success-state {
+    display: none;
+    text-align: center;
+    padding: 8px 0;
+  }
+  .success-icon {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--t100);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+  }
+  .success-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--v800);
+    margin-bottom: 8px;
+  }
+  .success-sub {
+    font-size: 15px;
+    color: var(--n400);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: var(--r-pill);
+    transition: opacity .15s;
+  }
   .wa-btn:hover { opacity: .88; }
 
-  /* FRANJA DIANA */
-  .diana-section { padding: 72px 0; border-top: 1px solid rgba(255,255,255,.08); }
-  .diana-inner { display: flex; gap: 48px; align-items: center; }
+  /* ── FRANJA DIANA ── */
+  .diana-section {
+    padding: 72px 0;
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+  .diana-inner {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+  }
   .diana-img-wrap {
-    width: 160px; height: 160px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
     background: linear-gradient(135deg, var(--v600), var(--t400));
-    display: flex; align-items: center; justify-content: center; font-size: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
     border: 3px solid rgba(255,255,255,.1);
   }
   .diana-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-  .diana-quote { font-size: clamp(16px, 2vw, 20px); font-weight: 600; line-height: 1.6; color: rgba(255,255,255,.9); font-style: italic; margin-bottom: 12px; }
-  .diana-cite { font-size: 13px; color: var(--t400); font-weight: 600; font-style: normal; }
+  .diana-quote {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 600;
+    line-height: 1.6;
+    color: rgba(255,255,255,.9);
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .diana-cite {
+    font-size: 13px;
+    color: var(--t400);
+    font-weight: 600;
+    font-style: normal;
+  }
 
-  /* FOOTER */
-  .footer { padding: 32px 0; border-top: 1px solid rgba(255,255,255,.06); text-align: center; }
+  /* ── FOOTER ── */
+  .footer {
+    padding: 32px 0;
+    border-top: 1px solid rgba(255,255,255,.06);
+    text-align: center;
+  }
   .footer p { font-size: 12px; color: rgba(255,255,255,.25); }
   .footer a { color: rgba(255,255,255,.4); }
   .footer a:hover { color: var(--t400); }
 
+  /* ── RESPONSIVE ── */
   @media(max-width: 768px) {
     .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 56px; }
     .form-card { padding: 28px 22px; }
@@ -226,6 +340,7 @@
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="container nav-inner">
     <div class="logo">Mar<span>IA</span>ca</div>
@@ -233,6 +348,7 @@
   </div>
 </nav>
 
+<!-- HERO SPLIT -->
 <section>
   <div class="container hero">
 
@@ -243,16 +359,15 @@
         Clase gratuita · 60 minutos
       </div>
 
-      <!-- CAMBIO 3: Titular conectado con el mensaje de la landing -->
       <h1>
-        Tu primer paso<br>con la <em>IA</em>.<br>
-        En 60 minutos. Gratis.
+        Descubre para qué<br>
+        te sirve la <em>IA</em><br>
+        en tu vida.
       </h1>
 
-      <!-- CAMBIO 3: Subtítulo con hilo conductor -->
       <p class="hero-sub">
         No necesitas saber de tecnología. No necesitas haber usado ningún modelo de IA.
-        <strong>Solo necesitas la curiosidad que ya tienes.</strong>
+        <strong>Solo necesitas curiosidad y ganas de aprender algo nuevo.</strong>
       </p>
 
       <ul class="what-list">
@@ -274,20 +389,16 @@
         </li>
       </ul>
 
-      <!-- CAMBIO 1: Credenciales reales de Diana -->
       <div class="diana-chip">
-        <div class="diana-avatar">
-          <img src="Foto diana.png" alt="Diana" onerror="this.style.display='none';this.parentElement.innerHTML='👩'">
-        </div>
+        <div class="diana-avatar">👩</div>
         <div>
           <div class="diana-chip-name">Diana · Fundadora de MarIAca</div>
-          <div class="diana-chip-role">Educadora con más de 20 años · 3 años usando IA a diario</div>
+          <div class="diana-chip-role">3 años enseñando IA con alma y método</div>
         </div>
       </div>
 
       <div class="class-meta">
-        <!-- CAMBIO 2: Fecha menos vaga -->
-        <div class="meta-item">📅 <strong>Próxima fecha</strong> · Te aviso al registrarte</div>
+        <div class="meta-item">📅 <strong>Martes 21 de julio · 7:00 p.m.</strong></div>
         <div class="meta-item">⏱ <strong>60 minutos</strong> en vivo</div>
         <div class="meta-item">💻 <strong>Zoom o Meet</strong> · desde casa</div>
         <div class="meta-item">👥 <strong>Grupo abierto</strong> · sin límite</div>
@@ -299,10 +410,11 @@
     <div class="form-col">
       <div class="form-card" id="form-card">
 
+        <!-- Formulario activo -->
         <div id="form-state">
           <div class="form-eyebrow">Reserva tu lugar</div>
           <div class="form-title">Quiero mi clase gratuita</div>
-          <p class="form-sub">Te escribo por WhatsApp con la fecha y el link. Sin spam. Sin compromisos.</p>
+          <p class="form-sub">Te escribo por WhatsApp para confirmar tu cupo y enviarte el link. Sin spam. Sin compromisos.</p>
 
           <div class="field">
             <label for="nombre">Tu nombre</label>
@@ -331,11 +443,6 @@
             Reservar mi lugar gratis →
           </button>
 
-          <!-- CAMBIO 5: Enlace a ruta para indecisos -->
-          <div class="form-ruta-link">
-            ¿Todavía tienes dudas? <a href="ruta-mariaca.html">Mira cómo funciona la IA en la práctica →</a>
-          </div>
-
           <div class="form-guarantee">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A7A8A" stroke-width="2">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -349,7 +456,7 @@
           <div class="success-icon">🎉</div>
           <div class="success-title">¡Listo! Tu lugar está reservado.</div>
           <p class="success-sub">
-            Diana te escribe por WhatsApp en las próximas horas con la fecha y el link de la clase.
+            Diana te escribe por WhatsApp en las próximas horas para confirmar tu cupo del martes 21 de julio y enviarte el link.
             Si quieres confirmar ahora mismo, escríbele tú también.
           </p>
           <a href="https://web.whatsapp.com/send?phone=573006205315&text=Hola%20Diana,%20me%20registr%C3%A9%20para%20la%20clase%20gratuita%20%F0%9F%99%8C" target="_blank" class="wa-btn">
@@ -377,15 +484,16 @@
           Existe para que descubras que tú también puedes.<br>
           Eso cambia todo."
         </p>
-        <div class="diana-cite">— Diana · Fundadora de MarIAca · Educadora con más de 20 años · 3 años usando IA a diario</div>
+        <div class="diana-cite">— Diana · Fundadora de MarIAca</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <p>© 2026 MarIAca · <a href="index.html">Volver al inicio</a> · <a href="ruta-mariaca.html">Ver la ruta con la IA</a> · <a href="https://web.whatsapp.com/send?phone=573006205315" target="_blank">WhatsApp</a></p>
+    <p>© 2026 MarIAca · <a href="index.html">Volver al inicio</a> · <a href="https://web.whatsapp.com/send?phone=573006205315" target="_blank">WhatsApp</a></p>
   </div>
 </footer>
 
@@ -394,17 +502,24 @@ function handleSubmit() {
   const nombre = document.getElementById('nombre').value.trim();
   const whatsapp = document.getElementById('whatsapp').value.trim();
   const motivo = document.getElementById('motivo').value;
+
   if (!nombre) { alert('Por favor escribe tu nombre.'); return; }
   if (!whatsapp) { alert('Por favor escribe tu número de WhatsApp.'); return; }
   if (!motivo) { alert('Por favor elige lo que más te resuena.'); return; }
+
+  // Armar mensaje para Diana por WhatsApp
   const msg = encodeURIComponent(
     `Hola Diana 👋 Me registré para la clase gratuita.\n` +
     `Nombre: ${nombre}\n` +
     `WhatsApp: ${whatsapp}\n` +
     `Lo que quiero lograr: ${motivo}`
   );
+
+  // Mostrar estado éxito
   document.getElementById('form-state').style.display = 'none';
   document.getElementById('success-state').style.display = 'block';
+
+  // Abrir WhatsApp con los datos (opcional — se puede reemplazar por un form real)
   setTimeout(() => {
     window.open(`https://web.whatsapp.com/send?phone=573006205315&text=${msg}`, '_blank');
   }, 800);
