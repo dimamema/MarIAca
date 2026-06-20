@@ -40,6 +40,8 @@
   .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(93,202,165,.12);border:1px solid rgba(93,202,165,.25);border-radius:var(--r-pill);padding:6px 16px;font-size:12px;font-weight:600;color:var(--t400);letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;}
   .hero-dot{width:6px;height:6px;border-radius:50%;background:var(--t400);animation:blink 2s ease-in-out infinite;}
   @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* CAMBIO 1: Titular suavizado — conecta con la landing */
   .hero h1{font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--white);line-height:1.15;letter-spacing:-.025em;margin-bottom:20px;}
   .hero h1 em{font-style:normal;color:var(--t400);}
   .hero-sub{font-size:17px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:36px;}
@@ -50,11 +52,11 @@
   .persona-name{font-size:13px;font-weight:600;color:var(--white);}
   .persona-desc{font-size:11px;color:rgba(255,255,255,.5);margin-top:1px;}
 
-  /* MÉTODO LEGEND */
+  /* MÉTODO */
   .method-section{padding:48px 0 0;}
   .method-intro{text-align:center;margin-bottom:32px;}
   .method-intro p{font-size:15px;color:var(--n400);max-width:520px;margin:0 auto;}
-  .method-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0;}
+  .method-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   .method-card{border-radius:var(--r-lg);padding:24px 28px;border:1.5px solid;}
   .method-card.violet{background:var(--v100);border-color:var(--v200);}
   .method-card.teal{background:var(--t100);border-color:#9FE1CB;}
@@ -66,7 +68,6 @@
   .method-letter-badge{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
   .violet .method-letter-badge{background:var(--v600);color:var(--white);}
   .teal .method-letter-badge{background:var(--t600);color:var(--white);}
-  .method-item-text{}
   .method-item-word{font-size:13px;font-weight:600;}
   .violet .method-item-word{color:var(--v800);}
   .teal .method-item-word{color:var(--t700);}
@@ -162,7 +163,7 @@
   .cta-strip-btn{background:var(--t400);color:var(--t700);font-size:14px;font-weight:700;padding:12px 24px;border-radius:var(--r-pill);border:none;cursor:pointer;white-space:nowrap;transition:opacity .15s;}
   .cta-strip-btn:hover{opacity:.88;}
 
-  /* CTA FINAL */
+  /* CAMBIO 2: CTA FINAL con tres botones */
   .cta-final{padding:80px 0;background:linear-gradient(135deg,var(--v800) 0%,var(--t700) 100%);text-align:center;}
   .cta-final h2{font-size:clamp(26px,3.5vw,42px);font-weight:800;color:var(--white);line-height:1.2;margin-bottom:14px;letter-spacing:-.02em;}
   .cta-final p{font-size:16px;color:rgba(255,255,255,.7);margin-bottom:36px;line-height:1.7;max-width:480px;margin-left:auto;margin-right:auto;}
@@ -214,8 +215,10 @@
   <div class="container">
     <div class="hero-inner">
       <div class="hero-eyebrow"><div class="hero-dot"></div>Tu ruta con la IA — paso a paso</div>
-      <h1>De tu primer prompt<br>a tu negocio <em>automatizado</em></h1>
-      <p class="hero-sub">Cuatro niveles. Un solo caso real. Ves cómo la IA transforma un negocio completo —<strong> desde el primer mensaje hasta el chatbot que vende mientras duermes.</strong></p>
+
+      <!-- CAMBIO 1: Titular suavizado — conecta con la landing -->
+      <h1>Mira cómo funciona la IA<br>en la práctica — <em>nivel por nivel</em></h1>
+      <p class="hero-sub">Un negocio real. Cuatro pasos reales. Ves cómo Camila pasa de <strong>no saber qué pedirle a la IA</strong> — hasta tener un equipo de asistentes que trabaja para ella todos los días.</p>
       <div class="hero-actions">
         <a href="#escalera" class="btn btn-teal">Ver la escalera completa</a>
         <a href="clase-gratuita.html" class="btn btn-outline">Clase gratuita →</a>
@@ -341,12 +344,14 @@
   </div>
 </section>
 
+<!-- CAMBIO 2: CTA final con tres botones — incluye "Ver los talleres" -->
 <section class="cta-final">
   <div class="container">
     <h2>¿En cuál nivel estás tú hoy?</h2>
     <p>No importa si nunca has usado la IA. Aquí empezamos desde donde estás — y avanzamos juntas.</p>
     <div class="cta-final-actions">
-      <a href="clase-gratuita.html" class="btn btn-teal">Clase gratuita →</a>
+      <a href="index.html#talleres" class="btn btn-teal">Ver los talleres →</a>
+      <a href="clase-gratuita.html" class="btn btn-outline">Clase gratuita →</a>
       <a href="https://web.whatsapp.com/send?phone=573006205315&text=Hola%20Diana,%20vi%20la%20escalera%20y%20quiero%20saber%20por%20d%C3%B3nde%20empezar" target="_blank" class="btn btn-outline">Escríbeme, Diana 💬</a>
     </div>
   </div>
@@ -411,7 +416,6 @@ function promptPreview(labelTxt, promptTxt, lockMsg){
 }
 
 const panels = [
-  // NIVEL 1
   ()=>{
     const items=[
       {l:"QU",w:"Quién",role:"Rol que asume la IA",v:"Eres experta en marketing para boutiques de moda femenina en Colombia",d:V},
@@ -427,13 +431,11 @@ const panels = [
     </div>
     <div class="method-banner" style="background:#EEEDFE">
       <div class="method-banner-name" style="color:#534AB7">Método QUQUCO — construye el prompt desde cero</div>
-      <div class="method-banner-sub" style="color:#534AB7">Quién: rol que asume la IA · Qué: lo que deseas obtener · Cómo: formato y estilo · Contexto: info adicional</div>
+      <div class="method-banner-sub" style="color:#534AB7">Quién · Qué · Cómo · Contexto</div>
     </div>
     <div class="panel-body">
       <span class="subsection-label">La situación de Camila</span>
-      <div class="situation-box">
-        <strong>El problema:</strong> cada semana necesita publicar en WhatsApp para anunciar nuevas prendas. Pero entre atender clientas, revisar inventario y hacer cuentas, el marketing queda para "después". Con QUQUCO aprende a pedirle a la IA exactamente lo que necesita — en minutos.
-      </div>
+      <div class="situation-box"><strong>El problema:</strong> cada semana necesita publicar en WhatsApp para anunciar nuevas prendas. Con QUQUCO aprende a pedirle a la IA exactamente lo que necesita — en minutos.</div>
       <span class="subsection-label">Aplicando QUQUCO</span>
       <div class="ququco-grid">${qi(items,'')}</div>
       <span class="subsection-label">El prompt de Camila</span>
@@ -458,32 +460,29 @@ Estamos en el mismo lugar de siempre, esperándote.
 ¿Cuál es tu talla? Escríbeme y te aparto una antes de que se vayan.</div>
       <span class="subsection-label">Resultado real</span>
       <div class="result-chips">${chips(["Mensaje listo en 3 minutos","Sin bloqueo creativo","Tono y estilo de Casa Camila"])}</div>
-      ${nextCard(1,"Nivel 2 — Camila aplica <strong>PRAO</strong> para ajustar el mensaje según cómo respondieron sus clientas.")}
+      ${nextCard(1,"Nivel 2 — Camila aplica <strong>PRAO</strong> para ajustar el mensaje.")}
     </div>`;
   },
-  // NIVEL 2
   ()=>{
     const items=[
       {l:"P",w:"Prueba",role:"Haz el prompt y observa",v:"Envió el mensaje a su grupo y analizó quién respondió y quién no",d:T},
       {l:"R",w:"Revisa",role:"¿Te gustó? ¿Falta algo?",v:"Las clientas mayores de 50 no respondieron. El tono era muy juvenil.",d:T},
       {l:"A",w:"Ajusta",role:"Añade detalles o cambia el enfoque",v:"Pide versión más elegante, sin 'hermosa', sin exceso de emojis",d:T},
-      {l:"O",w:"Optimiza",role:"Repite hasta obtener lo esperado",v:"Agrega 'blusas para verse bien a cualquier edad' — sube la percepción de valor",d:T}
+      {l:"O",w:"Optimiza",role:"Repite hasta obtener lo esperado",v:"Agrega 'blusas para verse bien a cualquier edad'",d:T}
     ];
     return `<div class="panel-header">
       <div class="panel-header-row">
-        <div><div class="panel-title">Camila itera el mensaje con PRAO</div><div class="panel-sub">El primer resultado es un punto de partida. PRAO convierte ese borrador en el mensaje exacto que sus clientas necesitan leer.</div></div>
+        <div><div class="panel-title">Camila itera el mensaje con PRAO</div><div class="panel-sub">El primer resultado es un punto de partida. PRAO convierte ese borrador en el mensaje exacto.</div></div>
         <span class="panel-badge" style="background:#EEEDFE;color:#534AB7">Taller 02 · Intermedio</span>
       </div>
     </div>
     <div class="method-banner" style="background:#E1F5EE">
       <div class="method-banner-name" style="color:#0F6E56">Método PRAO — itera hasta que sea exacto</div>
-      <div class="method-banner-sub" style="color:#0F6E56">Pruébalo · Revísalo · Ajústalo · Optimízalo — repite hasta obtener lo esperado</div>
+      <div class="method-banner-sub" style="color:#0F6E56">Pruébalo · Revísalo · Ajústalo · Optimízalo</div>
     </div>
     <div class="panel-body">
       <span class="subsection-label">La situación de Camila</span>
-      <div class="situation-box">
-        <strong>El avance:</strong> el mensaje funcionó con clientas jóvenes, pero sus clientas más fieles — las de 50 en adelante — respondieron poco. Camila aplica PRAO para ajustarlo sin perder lo que sí funcionó.
-      </div>
+      <div class="situation-box"><strong>El avance:</strong> el mensaje funcionó con clientas jóvenes, pero sus clientas más fieles — las de 50 en adelante — respondieron poco. Camila aplica PRAO para ajustarlo.</div>
       <span class="subsection-label">Aplicando PRAO</span>
       <div class="ququco-grid">${qi(items,'')}</div>
       <span class="subsection-label">El prompt ajustado</span>
@@ -492,7 +491,6 @@ Estamos en el mismo lugar de siempre, esperándote.
 — Máximo dos emojis, más elegantes
 — Tono más sereno y sofisticado
 — Mis clientas más fieles tienen entre 50 y 65 años
-  y quieren verse bien sin esfuerzo
 — Mantén la pregunta al final
 — Agrega algo que hable de confianza y estilo propio</div>
       <span class="subsection-label">Lo que la IA respondió</span>
@@ -504,19 +502,11 @@ Colores actuales, tallas completas, unidades limitadas.
 
 Te esperamos con el mismo cuidado de siempre.
 ¿Qué talla usas? Escríbeme y te aparto la tuya.</div>
-      <span class="subsection-label">El ciclo PRAO en Casa Camila</span>
-      <div class="prao-grid">
-        <div class="prao-item"><div class="prao-letter">P</div><div class="prao-word">Prueba</div><div class="prao-def">Haz el prompt y observa</div><div class="prao-desc">Envió el mensaje al grupo de WhatsApp</div></div>
-        <div class="prao-item"><div class="prao-letter">R</div><div class="prao-word">Revisa</div><div class="prao-def">¿Te gustó? ¿Falta algo?</div><div class="prao-desc">Analizó quién respondió y quién no</div></div>
-        <div class="prao-item"><div class="prao-letter">A</div><div class="prao-word">Ajusta</div><div class="prao-def">Cambia el enfoque si es necesario</div><div class="prao-desc">Pidió versión más elegante a la IA</div></div>
-        <div class="prao-item"><div class="prao-letter">O</div><div class="prao-word">Optimiza</div><div class="prao-def">Repite hasta obtener lo esperado</div><div class="prao-desc">Mensaje final: funciona para ambos grupos</div></div>
-      </div>
       <span class="subsection-label">Resultado real</span>
       <div class="result-chips">${chips(["Mismo negocio, dos públicos atendidos","Sin reescribir desde cero","PRAO aplicado en 10 minutos"])}</div>
-      ${nextCard(2,"Nivel 3 — Camila crea su <strong>equipo de 5 asistentes</strong>, uno para cada área del negocio.")}
+      ${nextCard(2,"Nivel 3 — Camila crea su <strong>equipo de 5 asistentes</strong>.")}
     </div>`;
   },
-  // NIVEL 3
   ()=>{
     const asList=[
       {icon:"🛍",name:"Asistente de ventas",role:"Responde clientas, recomienda prendas, ofrece apartar",tc:V},
@@ -534,49 +524,42 @@ Te esperamos con el mismo cuidado de siempre.
       </div>`).join('') + `<div class="ast-card" style="border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 12px"><div style="font-size:22px;color:#ccc;margin-bottom:6px">+</div><div style="font-size:12px;color:#7A7A8A">Camila decide qué área necesita primero</div></div>`;
     return `<div class="panel-header">
       <div class="panel-header-row">
-        <div><div class="panel-title">Camila construye su equipo de 5 asistentes</div><div class="panel-sub">6 frentes del negocio, 5 asistentes especializados. Cada uno ya conoce a Casa Camila. Camila deja de empezar desde cero.</div></div>
+        <div><div class="panel-title">Camila construye su equipo de 5 asistentes</div><div class="panel-sub">6 frentes del negocio, 5 asistentes especializados. Cada uno ya conoce a Casa Camila.</div></div>
         <span class="panel-badge" style="background:#E1F5EE;color:#0F6E56">Taller 03 · Avanzado</span>
       </div>
     </div>
     <div class="method-banner" style="background:#E1F5EE">
-      <div class="method-banner-name" style="color:#0F6E56">Equipo de asistentes — un asistente por área del negocio</div>
-      <div class="method-banner-sub" style="color:#0F6E56">QUQUCO define el rol de cada uno · Camila dirige · La IA ejecuta · El negocio no para</div>
+      <div class="method-banner-name" style="color:#0F6E56">Equipo de asistentes — un asistente por área</div>
+      <div class="method-banner-sub" style="color:#0F6E56">QUQUCO define el rol de cada uno · Camila dirige · La IA ejecuta</div>
     </div>
     <div class="panel-body">
       <span class="subsection-label">La situación de Camila</span>
-      <div class="situation-box">
-        <strong>El salto:</strong> Camila tiene 6 frentes abiertos y una sola persona de apoyo. Crea 5 asistentes especializados con QUQUCO — uno por área. Cada asistente ya sabe quién es Casa Camila, cómo habla y qué necesita. Camila llega, hace la pregunta concreta y obtiene lo que necesita.
-      </div>
+      <div class="situation-box"><strong>El salto:</strong> Camila crea 5 asistentes especializados con QUQUCO — uno por área. Cada uno ya sabe quién es Casa Camila, cómo habla y qué necesita.</div>
       <span class="subsection-label">Los 5 asistentes de Casa Camila</span>
       <div class="assistants-grid">${asGrid}</div>
       <span class="subsection-label">Así empieza el asistente de ventas</span>
-      ${promptPreview(
-        "System prompt — asistente de ventas (inicio)",
+      ${promptPreview("System prompt — asistente de ventas (inicio)",
         `Eres la asistente de ventas de Casa Camila Boutique,\nuna tienda de moda femenina en Medellín.\n\nTu trabajo es responder a las clientas con calidez,\nrecomendar prendas según su estilo y siempre\nofrecer apartar lo que les interese.`,
-        "<strong>El prompt completo lo construyes en el Taller 03.</strong><br>Aprende a configurar los 5 asistentes de tu negocio — con tu contexto, tu tono y tus reglas exactas."
-      )}
+        "<strong>El prompt completo lo construyes en el Taller 03.</strong><br>Aprende a configurar los 5 asistentes de tu negocio — con tu contexto, tu tono y tus reglas exactas.")}
       <span class="subsection-label">Resultado real</span>
       <div class="result-chips">${chips(["6 frentes, 5 asistentes","Contexto fijo, sin repetir","Camila dirige — la IA ejecuta"])}</div>
-      ${nextCard(3,"Nivel 4 — Camila instala un <strong>chatbot en WhatsApp</strong> que responde clientas y aparta prendas mientras ella atiende en la tienda.")}
+      ${nextCard(3,"Nivel 4 — Casa Camila instala un <strong>chatbot en WhatsApp</strong>.")}
     </div>`;
   },
-  // NIVEL 4
   ()=>{
     return `<div class="panel-header">
       <div class="panel-header-row">
-        <div><div class="panel-title">Casa Camila tiene chatbot propio en WhatsApp</div><div class="panel-sub">Cuando Camila está atendiendo, el chatbot responde. Cuando está descansando, el chatbot trabaja. El negocio no para.</div></div>
+        <div><div class="panel-title">Casa Camila tendrá chatbot propio en WhatsApp</div><div class="panel-sub">Cuando Camila está atendiendo, el chatbot responde. Cuando descansa, el chatbot trabaja.</div></div>
         <span class="panel-badge" style="background:#E1F5EE;color:#0F6E56">Próximamente · Masterclass</span>
       </div>
     </div>
     <div class="method-banner" style="background:#E1F5EE">
       <div class="method-banner-name" style="color:#0F6E56">Chatbot para WhatsApp — sin código, sin complicaciones</div>
-      <div class="method-banner-sub" style="color:#0F6E56">Envía contenido semanal · Responde preguntas frecuentes · Aparta prendas · Camila solo cierra la venta</div>
+      <div class="method-banner-sub" style="color:#0F6E56">Responde preguntas · Aparta prendas · Camila solo cierra la venta</div>
     </div>
     <div class="panel-body">
       <span class="subsection-label">La situación de Camila</span>
-      <div class="situation-box">
-        <strong>La meta:</strong> Camila pierde ventas porque no puede responder WhatsApp al momento. Clientas preguntan tallas, precios y disponibilidad — y si tarda, compran en otro lado. El chatbot responde al instante, aparta prendas y avisa a Camila solo cuando hay que cerrar la venta.
-      </div>
+      <div class="situation-box"><strong>La meta:</strong> Camila pierde ventas porque no puede responder WhatsApp al momento. El chatbot responde al instante, aparta prendas y avisa a Camila solo cuando hay que cerrar la venta.</div>
       <span class="subsection-label">Una conversación real del chatbot</span>
       <div class="chat-mockup">
         <div class="chat-header">
@@ -584,28 +567,25 @@ Te esperamos con el mismo cuidado de siempre.
           <div><div class="chat-name">Casa Camila Boutique</div><div class="chat-status">Responde al instante</div></div>
         </div>
         <div class="bubble-row right"><div class="bubble user">Hola, ¿tienen blusas en talla L?</div></div>
-        <div class="bubble-row"><div class="bubble bot">¡Hola! Sí tenemos 💜 Llegaron blusas importadas nuevas, tallas S a XL. ¿Tienes algún color favorito? Te cuento qué hay disponible.</div></div>
+        <div class="bubble-row"><div class="bubble bot">¡Hola! Sí tenemos 💜 Llegaron blusas importadas nuevas, tallas S a XL. ¿Tienes algún color favorito?</div></div>
         <div class="bubble-row right"><div class="bubble user">Me gustan los tonos tierra</div></div>
-        <div class="bubble-row"><div class="bubble bot">Perfecta elección para esta temporada. Tenemos en terracota y beige arena — las dos en talla L. ¿Quieres que te aparte una mientras vienes?</div></div>
+        <div class="bubble-row"><div class="bubble bot">Perfecta elección. Tenemos en terracota y beige arena — las dos en talla L. ¿Quieres que te aparte una?</div></div>
         <div class="bubble-row right"><div class="bubble user">Sí, la terracota please</div></div>
         <div class="bubble-row"><div class="bubble bot">Listo, la blusa terracota talla L queda apartada para ti 🌿 Le aviso a Camila para confirmar. ¿Cuándo piensas venir?</div></div>
       </div>
-      <span class="subsection-label">Así empieza el system prompt del chatbot</span>
-      ${promptPreview(
-        "System prompt — chatbot Casa Camila (inicio)",
-        `Eres la asistente virtual de Casa Camila Boutique,\nuna tienda de moda femenina en Medellín.\n\nRespondes mensajes de clientas en WhatsApp\ncon calidez, brevedad y criterio.`,
-        "<strong>La configuración completa llega en la Masterclass.</strong><br>Escríbele a Diana para ser la primera en instalar el chatbot en tu negocio."
-      )}
       <span class="subsection-label">Resultado real</span>
-      <div class="result-chips">${chips(["Responde al instante, 24/7","Aparta prendas automático","Camila solo cierra la venta","Ventas que antes se perdían"])}</div>
+      <div class="result-chips">${chips(["Responde al instante, 24/7","Aparta prendas automático","Camila solo cierra la venta"])}</div>
+      <div style="background:var(--n100);border-radius:var(--r-md);padding:16px 18px;margin-top:20px;font-size:14px;color:var(--n400);">
+        Mientras tanto, los Talleres 01, 02 y 03 ya están disponibles. <strong style="color:var(--n900)">Empieza por donde estás hoy.</strong>
+      </div>
     </div>`;
   }
 ];
 
 const ctas = [
   {t:"<strong>Camila lo aprendió en 4 horas.</strong><br>En el Taller 01 construyes tu primer prompt con QUQUCO — con tu propio negocio.",b:"Quiero el Taller 01",wa:"quiero%20el%20Taller%2001"},
-  {t:"<strong>¿Tienes tu primer prompt?</strong><br>En el Taller 02 aprendes PRAO para refinarlo hasta que sea exacto para tu negocio.",b:"Quiero el Taller 02",wa:"quiero%20el%20Taller%2002"},
-  {t:"<strong>Tu negocio tiene muchos frentes.</strong><br>En el Taller 03 creas un asistente para cada área — y dejas de cargar todo sola.",b:"Quiero el Taller 03",wa:"quiero%20el%20Taller%2003"},
+  {t:"<strong>¿Tienes tu primer prompt?</strong><br>En el Taller 02 aprendes PRAO para refinarlo hasta que sea exacto.",b:"Quiero el Taller 02",wa:"quiero%20el%20Taller%2002"},
+  {t:"<strong>Tu negocio tiene muchos frentes.</strong><br>En el Taller 03 creas un asistente para cada área.",b:"Quiero el Taller 03",wa:"quiero%20el%20Taller%2003"},
   {t:"<strong>El chatbot de WhatsApp llega pronto.</strong><br>Sé la primera en instalarlo en tu negocio.",b:"Avisarme cuando salga",wa:"quiero%20saber%20del%20chatbot%20para%20WhatsApp"}
 ];
 
